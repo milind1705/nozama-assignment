@@ -6,16 +6,15 @@ import BillingOutput from './components/BillingOutput';
 import BillingForm from './components/BillingForm';
 const App: React.FC = ()=> {
   const [items, setItems] = useState<Product[]>([])
-  console.log(items)
   return (
-    <div className="App">
-      <div className='w-full text-center mt-8'>
-        <h1 className='text-green-700 text-7xl'>NOZAMA</h1>
+    <div className="h-screen w-screen bg-gray-700 text-white font-serif">
+      <div className='w-full text-center'>
+        <h1 className=' text-7xl decoration-orange-600 text-yellow-600'>NOZAMA</h1>
     </div>
         <div>
           <BillingForm items={items} setItems={setItems}/>
         </div>
-        <div className='flex justify-around'>
+        <div className='flex justify-around border my-4 mx-4'>
           <BillingInput items={items} setItems={setItems}/>
           <BillingOutput items={items} />
           </div>

@@ -9,6 +9,7 @@ const BillingInput:React.FC<Props> = ({ items }) => {
       <div className="mt-12">
         <h1 className="text-3xl text-center">Products Input</h1>
         <div className="w-full px flex justify-center">
+            {items.length > 0 ?
           <table className="table-auto">
             <thead>
               <tr>
@@ -27,7 +28,7 @@ const BillingInput:React.FC<Props> = ({ items }) => {
                 );
               })}
             </tbody>
-          </table>
+          </table>: "Inserted Product list and Price will display here."}
         </div>
       </div>
     );

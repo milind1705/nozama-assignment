@@ -35,23 +35,23 @@ const BillingForm:React.FC<Props> = ({ items, setItems }) => {
   
     return (
       <div className="mt-12">
-        <h1 className="text-3xl text-center mt-8">Billing Form</h1>
-        <div className="ml-60 my-20">
+        <h1 className="text-3xl text-center">Billing Form</h1>
+        <div className="ml-60 my-12">
           <form
             className=" max-w-lg flex flex-row gap-4 text-center "
             onSubmit={addItems}
           >
             <div className="gap-4 flex flex-row py-2">
               <label className="py-2 flex flex-row" htmlFor="item">Product:</label>
-              <input className="px-4 rounded border-solid border-2 border-indigo-600" required name="item" type="text" />
+              <input className="px-4 rounded border-solid border-2 border-indigo-600 text-black" required name="item" type="text" />
             </div>
             <div className="gap-4 flex flex-row py-2">
               <label className="py-2" htmlFor="price">Price:</label>
-              <input className="px-4 rounded border-solid border-2 border-indigo-600" required name="price" type="number" step="any"/>
+              <input className="text-black px-4 rounded border-solid border-2 border-indigo-600" required name="price" type="number" step="any"/>
             </div>
             <div className="gap-4 flex flex-row py-2">
               <label className="py-2" htmlFor="type">Category:</label>
-              <select className="px-4 rounded border-solid border-2 border-indigo-600" name="types" id="" required>
+              <select className="text-black px-4 rounded border-solid border-2 border-indigo-600" name="types" id="" required>
                 <option value="none">None</option>
                 <option value="food">Food</option>
                 <option value="medicle">Medicle Poducts</option>
@@ -60,7 +60,7 @@ const BillingForm:React.FC<Props> = ({ items, setItems }) => {
             </div>
             <div className="gap-4 flex flex-row py-2 ">
               <label className="py-2" htmlFor="type">Imported:</label>
-              <select className=" px-4 rounded border-solid border-2 border-indigo-600" name="imported" id="" required>
+              <select className="text-black px-4 rounded border-solid border-2 border-indigo-600" name="imported" id="" required>
                 <option value="no">No</option>
                 <option value="yes">Yes</option>
               </select>

@@ -11,10 +11,10 @@ const BillingOutput:React.FC<Props> = ({ items }) => {
   let salesTax:number = 0;
 
   return (
-    <div className="mt-16 ">
+    <div className="mt-12 ">
       <h1 className="text-3xl text-center">Products Output</h1>
       <div className="flex justify-center">
-
+      {items.length >0 ?
       <table className="table-auto">
         <thead>
           <tr>
@@ -59,7 +59,7 @@ const BillingOutput:React.FC<Props> = ({ items }) => {
             <td className='py-4 text-xl'> Sales Tax : {salesTax.toFixed(2)}</td>
           </tr>
         </tbody>
-      </table>
+      </table> : "Product List with added sales tax and Import duty will be display here"}
       </div>
     </div>
   );
