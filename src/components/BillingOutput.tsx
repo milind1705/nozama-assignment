@@ -15,7 +15,7 @@ const BillingOutput:React.FC<Props> = ({ items }) => {
       <h1 className="text-3xl text-center">Products Output</h1>
       <div className="flex justify-center">
       {items.length >0 ?
-      <table className="table-auto">
+      <table className="table-auto mb-4">
         <thead>
           <tr>
             <th className="px-4 py-2">Product Name</th>
@@ -50,13 +50,13 @@ const BillingOutput:React.FC<Props> = ({ items }) => {
               </tr>
             );
           })}
-          <tr>
-            <td className='py-4 text-xl'>
+          <tr className='my-4'>
+            <td className='border px-4 py-2 text-xl'>
               {" "}
               Total : {finalTotal.toFixed(2)}
-              {" &"}{" "}
+             {" "}
             </td>
-            <td className='py-4 text-xl'> Sales Tax : {salesTax.toFixed(2)}</td>
+            <td className='border px-4 py-2text-xl'> Sales Tax : {salesTax.toFixed(2)}</td>
           </tr>
         </tbody>
       </table> : "Product List with added sales tax and Import duty will be display here"}
