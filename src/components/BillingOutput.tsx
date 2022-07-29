@@ -3,9 +3,12 @@ import {Product} from './model'
 
 interface Props{
   items:Product[],
+  discountedItems:string[],
+  importDutyPercent:number,
+  salesTaxPercent:number
 }
 
-const BillingOutput:React.FC<Props> = ({ items }) => {
+const BillingOutput:React.FC<Props> = ({ items, discountedItems, importDutyPercent, salesTaxPercent }) => {
   let total:number = 0;
   let finalTotal:number = 0;
   let salesTax:number = 0;
@@ -27,13 +30,11 @@ const BillingOutput:React.FC<Props> = ({ items }) => {
             let productPrice:number = elm.price;
             total = +total + +productPrice;
             let itemPrice = productPrice;
-            let importDuty = elm.imported === 'yes'  ? itemPrice * 0.05 : 0;
+            let importDuty = elm.imported === 'yes'  ? itemPrice * importDutyPercent : 0;
             let tax =
-              elm.types === "food" ||
-              elm.types === "book" ||
-              elm.types === "medicle"
+             discountedItems.includes(elm.types)
                 ? 0
-                : itemPrice * 0.1;
+                : itemPrice * salesTaxPercent;
 
             finalTotal = +finalTotal + +productPrice + +importDuty + +tax;
             salesTax = finalTotal - total;

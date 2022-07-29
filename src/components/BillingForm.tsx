@@ -3,11 +3,12 @@ import React from "react";
 import {Product} from './model'
 
 interface Props{
+  discountedItems:string[]
     items:Product[],
     setItems: React.Dispatch<React.SetStateAction<Product[]>>
 }
 
-const BillingForm:React.FC<Props> = ({ items, setItems }) => {
+const BillingForm:React.FC<Props> = ({ items, setItems, discountedItems }) => {
     const addItems = (e:React.FormEvent<HTMLFormElement>) => {
         const {item, price, types, imported} = e.target as typeof e.target & {
             item:{value:string}
@@ -53,9 +54,11 @@ const BillingForm:React.FC<Props> = ({ items, setItems }) => {
               <label className="py-2" htmlFor="type">Category:</label>
               <select className="text-black px-4 rounded border-solid border-2 border-indigo-600" name="types" id="" required>
                 <option value="none">None</option>
-                <option value="food">Food</option>
-                <option value="medicle">Medicle Poducts</option>
-                <option value="book">Book</option>
+                {discountedItems.map((elm)=>{
+                  return(
+                    <option key={elm} value={elm}>{elm}</option>
+                  )
+                })}
               </select>
             </div>
             <div className="gap-4 flex flex-row py-2 ">
