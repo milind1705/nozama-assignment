@@ -7,5 +7,5 @@
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # or
-Visit [Live_Project] (https://nozama-assignment.vercel.app)  here.
+Visit [Live_Project](https://nozama-assignment.vercel.app) here.
 

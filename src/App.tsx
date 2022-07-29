@@ -7,7 +7,6 @@ import BillingForm from './components/BillingForm';
 const App: React.FC = ()=> {
   const discountedItems:string[] = ['Book', "Food","Medicle Product"]
   const [items, setItems] = useState<Product[]>([])
-  console.log(items)
   return (
     <div className="h-screen w-screen bg-gray-700 text-white font-serif">
       <div className='w-full text-center'>
